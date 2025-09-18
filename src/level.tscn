@@ -6,11 +6,11 @@
 
 [node name="Level" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_u52ul")]
+[node name="Player Ship" parent="." instance=ExtResource("1_u52ul")]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("2_vonw3")
-player = NodePath("../Player")
+player = NodePath("../Player Ship")
 
 [node name="Starfield" type="Node2D" parent="."]
 script = ExtResource("3_oi3di")

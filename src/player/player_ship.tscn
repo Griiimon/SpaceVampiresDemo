@@ -1,13 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://b2kp6fuk76cal"]
+[gd_scene load_steps=15 format=3 uid="uid://b2kp6fuk76cal"]
 
 [ext_resource type="Script" uid="uid://d3hgu068whlda" path="res://player/player_ship.gd" id="1_oe5wf"]
 [ext_resource type="Script" uid="uid://billvtu67ery0" path="res://ship/player_ship_controller.gd" id="2_aq6oq"]
 [ext_resource type="Script" uid="uid://dbqd18vmhywy6" path="res://ship/ship_component_instance.gd" id="2_v44f0"]
+[ext_resource type="Resource" uid="uid://df2ho24ikyrd2" path="res://ship/components/data/generator_component.tres" id="3_j6obm"]
 [ext_resource type="Resource" uid="uid://cmtcp650viukl" path="res://ship/components/data/main_thruster_component.tres" id="3_xwq2p"]
 [ext_resource type="Resource" uid="uid://c61bmimgypxw0" path="res://ship/components/data/control_thruster_component.tres" id="4_j6obm"]
 [ext_resource type="Resource" uid="uid://dvcamknnejubd" path="res://ship/components/data/rotational_dampeners_component.tres" id="5_mpsxo"]
 [ext_resource type="PackedScene" uid="uid://ot3x2ayemre1" path="res://ship/effects/particle_thruster_effect.tscn" id="5_rpgy0"]
 [ext_resource type="Script" uid="uid://bknlxd1numre6" path="res://ship/effect_delegator.gd" id="5_xwq2p"]
+
+[sub_resource type="Resource" id="Resource_ttmp0"]
+script = ExtResource("2_v44f0")
+type = ExtResource("3_j6obm")
+tier = 1
+metadata/_custom_type_script = "uid://dbqd18vmhywy6"
 
 [sub_resource type="Resource" id="Resource_j6obm"]
 script = ExtResource("2_v44f0")
@@ -34,7 +41,7 @@ height = 40.95
 [node name="Player Ship" type="RigidBody2D" node_paths=PackedStringArray("controller", "effect_delegator")]
 script = ExtResource("1_oe5wf")
 controller = NodePath("PlayerShipController")
-components = Array[ExtResource("2_v44f0")]([SubResource("Resource_j6obm"), SubResource("Resource_mpsxo"), SubResource("Resource_sty7l")])
+components = Array[ExtResource("2_v44f0")]([SubResource("Resource_ttmp0"), SubResource("Resource_j6obm"), SubResource("Resource_mpsxo"), SubResource("Resource_sty7l")])
 effect_delegator = NodePath("EffectDelegator")
 
 [node name="EffectDelegator" type="Node" parent="." node_paths=PackedStringArray("main_thruster_effect")]

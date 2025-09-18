@@ -4,3 +4,4 @@
 
 [node name="GameData" type="Node"]
 script = ExtResource("1_0aco7")
+ship_components_directory = "res://ship/components/data"

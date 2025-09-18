@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="RotationalDampenersComponent" load_steps=2 format=3 uid="uid://dvcamknnejubd"]
+
+[ext_resource type="Script" uid="uid://5w0ld3sy84b7" path="res://ship/components/rotational_dampeners_component.gd" id="1_1iio1"]
+
+[resource]
+script = ExtResource("1_1iio1")
+metadata/_custom_type_script = "uid://5w0ld3sy84b7"

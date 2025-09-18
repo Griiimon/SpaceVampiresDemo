@@ -1,8 +1,6 @@
 class_name BaseShipComponent
 extends Resource
 
-@export var tier: int= 1
 
-
-func tick(ship: Ship, delta: float):
+func tick(ship: Ship, tier: int, delta: float):
 	pass

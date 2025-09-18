@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ControlThrustersComponent" load_steps=2 format=3 uid="uid://c61bmimgypxw0"]
+
+[ext_resource type="Script" uid="uid://d2v5mtensxphv" path="res://ship/components/control_thrusters_component.gd" id="1_jlr6u"]
+
+[resource]
+script = ExtResource("1_jlr6u")
+torque_per_tier = 100
+metadata/_custom_type_script = "uid://d2v5mtensxphv"

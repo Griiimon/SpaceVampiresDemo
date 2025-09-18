@@ -1,17 +1,17 @@
 class_name RotationalDampenersComponent
 extends BaseShipComponent
 
-const DAMPING_PER_TIER= 0.2
+const torque_per_tier= 0.2
 
 
 
-func tick(ship: Ship, delta: float):
+func tick(ship: Ship, tier: int, delta: float):
 	var thrust_input: float= ship.controller.thrust
 	if is_zero_approx(thrust_input):
-		ship.angular_damp= get_damping()
+		ship.angular_damp= get_damping(tier)
 	else:
 		ship.angular_damp= 0
 
 
-func get_damping()-> float:
-	return tier * DAMPING_PER_TIER
+func get_damping(tier: int)-> float:
+	return tier * torque_per_tier

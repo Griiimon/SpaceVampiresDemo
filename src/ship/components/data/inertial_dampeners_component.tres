@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="InertialDampenersComponent" load_steps=2 format=3 uid="uid://dpi2qncom40q5"]
+
+[ext_resource type="Script" uid="uid://vbxtkschrw6h" path="res://ship/components/inertial_dampeners_component.gd" id="1_qvfxx"]
+
+[resource]
+script = ExtResource("1_qvfxx")
+damping_per_tier = 0.1
+metadata/_custom_type_script = "uid://vbxtkschrw6h"

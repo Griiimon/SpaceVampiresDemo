@@ -4,7 +4,7 @@ extends RigidBody2D
 enum Effect { MAIN_THRUSTER, CONTROL_THRUSTER_LEFT, CONTROL_THRUSTER_RIGHT }
 
 @export var controller: ShipController
-@export var components: Array[BaseShipComponent]
+@export var components: Array[ShipComponentInstance]
 @export var effect_delegator: EffectDelegator
 
 

@@ -1,13 +1,13 @@
 class_name ControlThrustersComponent
 extends BaseShipComponent
 
-const TORQUE_PER_TIER= 100
+@export var torque_per_tier= 100
 
 
-func tick(ship: Ship, delta: float):
+func tick(ship: Ship, tier: int, delta: float):
 	var rotate_input: float= ship.controller.rotate
-	ship.apply_torque(get_torque() * rotate_input)
+	ship.apply_torque(get_torque(tier) * rotate_input)
 
 
-func get_torque()-> float:
-	return tier * TORQUE_PER_TIER
+func get_torque(tier: int)-> float:
+	return tier * torque_per_tier

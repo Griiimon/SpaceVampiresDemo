@@ -10,7 +10,7 @@
 
 [sub_resource type="Resource" id="Resource_v44f0"]
 script = ExtResource("3_e0oyn")
-tier = 1
+tier = null
 metadata/_custom_type_script = "uid://dr8b1fgaj2uj2"
 
 [sub_resource type="Resource" id="Resource_j6obm"]
@@ -22,13 +22,15 @@ metadata/_custom_type_script = "uid://d2v5mtensxphv"
 radius = 15.85
 height = 40.95
 
-[node name="Player Ship" type="RigidBody2D" node_paths=PackedStringArray("controller")]
+[node name="Player Ship" type="RigidBody2D" node_paths=PackedStringArray("controller", "effect_delegator")]
 script = ExtResource("1_oe5wf")
 controller = NodePath("PlayerShipController")
 components = Array[ExtResource("2_rpgy0")]([SubResource("Resource_v44f0"), SubResource("Resource_j6obm")])
+effect_delegator = NodePath("EffectDelegator")
 
-[node name="EffectDelegator" type="Node" parent="."]
+[node name="EffectDelegator" type="Node" parent="." node_paths=PackedStringArray("main_thruster_effect")]
 script = ExtResource("5_xwq2p")
+main_thruster_effect = NodePath("../Main Thruster Particles")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 rotation = 1.5708
@@ -44,5 +46,5 @@ shape = SubResource("CapsuleShape2D_5xgho")
 script = ExtResource("2_aq6oq")
 metadata/_custom_type_script = "uid://billvtu67ery0"
 
-[node name="Particle Thruster Effect" parent="." instance=ExtResource("5_rpgy0")]
+[node name="Main Thruster Particles" parent="." instance=ExtResource("5_rpgy0")]
 position = Vector2(-12, 0)

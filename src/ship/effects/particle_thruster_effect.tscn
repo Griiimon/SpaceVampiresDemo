@@ -8,8 +8,10 @@ particles = NodePath("Particles")
 
 [node name="Particles" type="CPUParticles2D" parent="."]
 rotation = 3.14159
+emitting = false
 amount = 15
 lifetime = 0.2
+local_coords = true
 emission_shape = 3
 emission_rect_extents = Vector2(2, 5)
 spread = 5.0

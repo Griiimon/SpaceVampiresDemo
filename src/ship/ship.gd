@@ -27,10 +27,10 @@ func start_effect(effect: Effect):
 func stop_effect(effect: Effect):
 	if not effect_delegator:
 		return
-	effect_delegator.start_effect(effect)
+	effect_delegator.stop_effect(effect)
 
 
-func set_effect_strength(effect: Effect):
+func set_effect_strength(effect: Effect, value: float):
 	if not effect_delegator:
 		return
-	effect_delegator.set_effect_strength(effect)
+	effect_delegator.set_effect_strength(effect, value)

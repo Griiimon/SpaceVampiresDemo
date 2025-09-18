@@ -1,5 +1,5 @@
 class_name BaseShipComponent
-extends Node
+extends Resource
 
 @export var tier: int= 1
 

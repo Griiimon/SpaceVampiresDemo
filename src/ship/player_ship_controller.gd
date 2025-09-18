@@ -3,7 +3,7 @@ extends ShipController
 
 
 func _physics_process(delta: float) -> void:
-	thrust= Input.get_axis("up", "down")
+	thrust= clampf(Input.get_axis("down", "up"), 0.0, 1.0)
 	rotate= Input.get_axis("left", "right")
 	
 	# if GameSettings.mouse_control:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfysbi31u81uc"]
+[gd_scene load_steps=4 format=3 uid="uid://bfysbi31u81uc"]
 
 [ext_resource type="PackedScene" uid="uid://b2kp6fuk76cal" path="res://player/player_ship.tscn" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://lepf3qcm8hko" path="res://camera.gd" id="2_vonw3"]
+[ext_resource type="Script" uid="uid://k4qcbxbqhlai" path="res://level/starfield.gd" id="3_oi3di"]
 
 [node name="Level" type="Node2D"]
 
@@ -10,3 +11,6 @@
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("2_vonw3")
 player = NodePath("../Player")
+
+[node name="Starfield" type="Node2D" parent="."]
+script = ExtResource("3_oi3di")

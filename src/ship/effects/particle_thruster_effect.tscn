@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ot3x2ayemre1"]
+
+[ext_resource type="Script" uid="uid://bnbro7v55o8ci" path="res://ship/effects/particle_thruster_effect.gd" id="1_oajy6"]
+
+[node name="Particle Thruster Effect" type="Node2D" node_paths=PackedStringArray("particles")]
+script = ExtResource("1_oajy6")
+particles = NodePath("Particles")
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+rotation = 3.14159
+amount = 15
+lifetime = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(2, 5)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+color = Color(0.571715, 0.441139, 0.383442, 1)

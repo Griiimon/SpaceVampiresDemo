@@ -8,3 +8,4 @@ func _process(delta: float) -> void:
 		return
 
 	position= player.position
+	zoom= Vector2.ONE / (sqrt(player.linear_velocity.length()) * 0.1 + 1)

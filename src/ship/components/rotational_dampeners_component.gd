@@ -4,11 +4,13 @@ extends BaseShipComponent
 const torque_per_tier= 0.2
 
 
+func update_state(ship: Ship, tier: int, delta: float)-> bool:
+	return is_zero_approx(ship.controller.rotate)
 
-func tick(ship: Ship, tier: int, delta: float):
-	var rotate_input: float= ship.controller.rotate
-	if is_zero_approx(rotate_input):
-		ship.angular_damp= get_damping(tier)
+
+func on_activity_changed(ship: Ship, active: bool, tier: int):
+	if active:
+		ship.angular_damp= get_damping(tier) * ship.get_component_efficiency()
 	else:
 		ship.angular_damp= 0
 

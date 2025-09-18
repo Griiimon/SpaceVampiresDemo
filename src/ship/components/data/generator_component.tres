@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GeneratorComponent" load_steps=2 format=3 uid="uid://df2ho24ikyrd2"]
+
+[ext_resource type="Script" uid="uid://djesuyggf8a1i" path="res://ship/components/generator_component.gd" id="1_1ve5b"]
+
+[resource]
+script = ExtResource("1_1ve5b")
+production_per_tier = 100.0
+energy_usage_per_tier = 0.0
+metadata/_custom_type_script = "uid://djesuyggf8a1i"

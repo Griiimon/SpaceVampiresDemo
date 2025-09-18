@@ -5,13 +5,20 @@ extends BaseShipComponent
 
 
 
+func update_state(ship: Ship, tier: int, delta: float)-> bool:
+	return ship.controller.thrust > 0
+
+
 func tick(ship: Ship, tier: int, delta: float):
-	var thrust_input: float= ship.controller.thrust
-	if is_zero_approx(thrust_input):
-		ship.stop_effect(Ship.Effect.MAIN_THRUSTER)
-	else:
+	var input: float= ship.controller.thrust
+	ship.apply_central_force(get_thrust(tier) * ship.get_component_efficiency() * input * ship.get_forward())
+
+
+func on_activity_changed(ship: Ship, active: bool, tier: int):
+	if active:
 		ship.start_effect(Ship.Effect.MAIN_THRUSTER)
-		ship.apply_central_force(get_thrust(tier) * thrust_input * ship.get_forward())
+	else:
+		ship.stop_effect(Ship.Effect.MAIN_THRUSTER)
 
 
 func get_thrust(tier: int)-> float:

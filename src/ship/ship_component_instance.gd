@@ -8,3 +8,7 @@ extends Resource
 
 func tick(ship: Ship, delta: float):
 	type.tick(ship, tier, delta)
+
+
+func upgrade(n: int= 1):
+	tier+= 1

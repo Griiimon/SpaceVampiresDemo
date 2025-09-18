@@ -14,6 +14,32 @@ func _physics_process(delta: float) -> void:
 		component.tick(self, delta)
 
 
+func add_component(component_type: BaseShipComponent):
+	assert(false, "not implemented")
+
+
+func upgrade_component(component_type: BaseShipComponent):
+	if not has_component(component_type):
+		add_component(component_type)
+	get_component(component_type).upgrade()
+
+
+func get_component(component_type: BaseShipComponent)-> ShipComponentInstance:
+	for comp_inst in components:
+		if comp_inst.type == component_type:
+			return comp_inst
+	return null
+
+
+func has_component(component_type: BaseShipComponent)-> bool:
+	return get_component(component_type) != null
+
+
+func get_component_tier(component_type: BaseShipComponent)-> int:
+	assert(has_component(component_type))
+	return get_component(component_type).tier
+
+
 func get_forward()-> Vector2:
 	return global_transform.x
 

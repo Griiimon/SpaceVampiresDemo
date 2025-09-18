@@ -1,0 +1,10 @@
+extends Node
+
+@export_dir var ship_components_directory
+
+var ship_components: Array[BaseShipComponent]
+
+
+func load_components():
+	for res in ResourceLoader.list_directory(ship_components_directory):
+		ship_components.append(res)

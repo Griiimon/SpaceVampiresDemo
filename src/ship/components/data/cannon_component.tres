@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CannonComponent" load_steps=3 format=3 uid="uid://b3m7srvefxycc"]
+
+[ext_resource type="Script" uid="uid://c5wgaruudc1ma" path="res://ship/components/cannon_component.gd" id="1_6l2qk"]
+[ext_resource type="Resource" uid="uid://c3v68m28lukyn" path="res://combat/projectiles/cannon_projectile.tres" id="1_igngx"]
+
+[resource]
+script = ExtResource("1_6l2qk")
+projectile = ExtResource("1_igngx")
+velocity_per_tier = 5.0
+energy_usage_per_tier = 100.0
+metadata/_custom_type_script = "uid://c5wgaruudc1ma"

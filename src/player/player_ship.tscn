@@ -45,11 +45,12 @@ metadata/_custom_type_script = "uid://dbqd18vmhywy6"
 radius = 15.85
 height = 40.95
 
-[node name="Player Ship" type="RigidBody2D" node_paths=PackedStringArray("controller", "effect_delegator")]
+[node name="Player Ship" type="RigidBody2D" node_paths=PackedStringArray("controller", "effect_delegator", "projectile_ejection_point")]
 script = ExtResource("1_oe5wf")
 controller = NodePath("PlayerShipController")
 components = Array[ExtResource("2_v44f0")]([SubResource("Resource_ttmp0"), SubResource("Resource_j6obm"), SubResource("Resource_mpsxo"), SubResource("Resource_sty7l"), SubResource("Resource_ae3q4")])
 effect_delegator = NodePath("EffectDelegator")
+projectile_ejection_point = NodePath("Projectile Ejection Point")
 
 [node name="EffectDelegator" type="Node" parent="." node_paths=PackedStringArray("main_thruster_effect")]
 script = ExtResource("5_xwq2p")
@@ -61,7 +62,6 @@ color = Color(0.705194, 0.705194, 0.705194, 1)
 polygon = PackedVector2Array(-16, 16, 0, -24, 16, 16, 0, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5xgho")
 
@@ -71,3 +71,6 @@ metadata/_custom_type_script = "uid://billvtu67ery0"
 
 [node name="Main Thruster Particles" parent="." instance=ExtResource("5_rpgy0")]
 position = Vector2(-12, 0)
+
+[node name="Projectile Ejection Point" type="Marker2D" parent="."]
+position = Vector2(33, 0)

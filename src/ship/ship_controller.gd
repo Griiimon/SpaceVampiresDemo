@@ -6,6 +6,8 @@ extends Node
 var thrust: float
 var rotate: float
 var brake: float
+var primary_action: bool
+
 
 
 func _ready() -> void:

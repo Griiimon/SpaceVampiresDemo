@@ -6,6 +6,7 @@ enum Effect { MAIN_THRUSTER, CONTROL_THRUSTER_LEFT, CONTROL_THRUSTER_RIGHT }
 @export var controller: ShipController
 @export var components: Array[ShipComponentInstance]
 @export var effect_delegator: EffectDelegator
+@export var projectile_ejection_point: Marker2D
 
 var total_available_energy: float
 var available_energy_ratio: float
@@ -61,6 +62,13 @@ func upgrade_component(component_type: BaseShipComponent):
 
 func add_energy(energy: float):
 	total_available_energy= energy
+
+
+func shoot_projectile(projectile: Projectile, speed: float):
+	var proj_inst: ProjectileInstance= projectile.projectile_scene.instantiate()
+	proj_inst.position= projectile_ejection_point.global_position
+	Global.level.add_child(proj_inst)
+	proj_inst.shoot(get_forward() * speed)
 
 
 func get_component(component_type: BaseShipComponent)-> ShipComponentInstance:

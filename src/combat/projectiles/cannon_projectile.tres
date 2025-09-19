@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Projectile" load_steps=3 format=3 uid="uid://c3v68m28lukyn"]
+
+[ext_resource type="Script" uid="uid://b2mpfvdck8f5o" path="res://combat/projectile.gd" id="1_bsday"]
+[ext_resource type="PackedScene" uid="uid://li8mx8mi8euq" path="res://combat/projectiles/cannon_projectile.tscn" id="1_umts4"]
+
+[resource]
+script = ExtResource("1_bsday")
+projectile_scene = ExtResource("1_umts4")
+metadata/_custom_type_script = "uid://b2mpfvdck8f5o"

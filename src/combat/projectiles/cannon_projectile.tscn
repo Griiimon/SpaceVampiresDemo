@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://li8mx8mi8euq"]
+
+[ext_resource type="Script" uid="uid://d0yutm7bgb7xu" path="res://combat/projectile_instance.gd" id="1_2de4l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p7hlu"]
+radius = 5.0
+
+[node name="CannonProjectile" type="Node2D"]
+script = ExtResource("1_2de4l")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0.001, 0)
+width = 2.0
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_p7hlu")
+
+[connection signal="body_entered" from="Area2D" to="." method="on_body_entered"]

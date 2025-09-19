@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cllf2iks1syc3"]
+
+[ext_resource type="Script" uid="uid://d0tovto55djlv" path="res://ship/ship.gd" id="1_ntca0"]
+[ext_resource type="Script" uid="uid://bknlxd1numre6" path="res://ship/effect_delegator.gd" id="2_522jo"]
+[ext_resource type="Script" uid="uid://bk624stu06nnv" path="res://ship/ai_ship_controller.gd" id="3_bjapx"]
+
+[node name="Enemy Ship Template" type="RigidBody2D" node_paths=PackedStringArray("controller", "effect_delegator")]
+collision_layer = 2
+script = ExtResource("1_ntca0")
+controller = NodePath("AIShipController")
+effect_delegator = NodePath("EffectDelegator")
+
+[node name="EffectDelegator" type="Node" parent="."]
+script = ExtResource("2_522jo")
+metadata/_custom_type_script = "uid://bknlxd1numre6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AIShipController" type="Node" parent="."]
+script = ExtResource("3_bjapx")
+metadata/_custom_type_script = "uid://bk624stu06nnv"

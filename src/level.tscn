@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfysbi31u81uc"]
+[gd_scene load_steps=6 format=3 uid="uid://bfysbi31u81uc"]
 
 [ext_resource type="PackedScene" uid="uid://b2kp6fuk76cal" path="res://player/player_ship.tscn" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://lepf3qcm8hko" path="res://camera.gd" id="2_vonw3"]
 [ext_resource type="Script" uid="uid://k4qcbxbqhlai" path="res://level/starfield.gd" id="3_oi3di"]
 [ext_resource type="PackedScene" uid="uid://6ioxjgp8cxk5" path="res://ui/debug/debug_component_window.tscn" id="4_0b4ue"]
+[ext_resource type="PackedScene" uid="uid://dleovlvr46skc" path="res://enemies/ships/enemy_ship_test.tscn" id="4_f2txt"]
 
 [node name="Level" type="Node2D"]
 
@@ -15,6 +16,9 @@ player = NodePath("../Player Ship")
 
 [node name="Starfield" type="Node2D" parent="."]
 script = ExtResource("3_oi3di")
+
+[node name="Enemy Ship Test" parent="." instance=ExtResource("4_f2txt")]
+position = Vector2(392, 0)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

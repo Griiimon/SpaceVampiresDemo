@@ -1,0 +1,44 @@
+[gd_scene load_steps=11 format=3 uid="uid://dleovlvr46skc"]
+
+[ext_resource type="PackedScene" uid="uid://cllf2iks1syc3" path="res://enemies/enemy_ship_template.tscn" id="1_y4sag"]
+[ext_resource type="Script" uid="uid://dbqd18vmhywy6" path="res://ship/ship_component_instance.gd" id="2_cff7s"]
+[ext_resource type="Resource" uid="uid://df2ho24ikyrd2" path="res://ship/components/data/generator_component.tres" id="3_yudhf"]
+[ext_resource type="Resource" uid="uid://c61bmimgypxw0" path="res://ship/components/data/control_thruster_component.tres" id="4_1qkb2"]
+[ext_resource type="Script" uid="uid://5w0ld3sy84b7" path="res://ship/components/rotational_dampeners_component.gd" id="5_1qkb2"]
+
+[sub_resource type="Resource" id="Resource_se0p3"]
+script = ExtResource("2_cff7s")
+type = ExtResource("3_yudhf")
+tier = 1
+metadata/_custom_type_script = "uid://dbqd18vmhywy6"
+
+[sub_resource type="Resource" id="Resource_0mocv"]
+script = ExtResource("2_cff7s")
+type = ExtResource("4_1qkb2")
+tier = 1
+metadata/_custom_type_script = "uid://dbqd18vmhywy6"
+
+[sub_resource type="Resource" id="Resource_pa383"]
+script = ExtResource("5_1qkb2")
+energy_usage_per_tier = 10.0
+metadata/_custom_type_script = "uid://5w0ld3sy84b7"
+
+[sub_resource type="Resource" id="Resource_u62mu"]
+script = ExtResource("2_cff7s")
+type = SubResource("Resource_pa383")
+tier = 10
+metadata/_custom_type_script = "uid://dbqd18vmhywy6"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4sag"]
+size = Vector2(55, 65)
+
+[node name="Enemy Ship Test" instance=ExtResource("1_y4sag")]
+components = Array[ExtResource("2_cff7s")]([SubResource("Resource_se0p3"), SubResource("Resource_0mocv"), SubResource("Resource_u62mu")])
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="1"]
+scale = Vector2(2, 2)
+color = Color(0.988235, 0, 0, 1)
+polygon = PackedVector2Array(16, 0, 0, -8, 8, -16, -16, -16, -16, -16, -8, -8, -8, 8, -16, 16, 8, 16, 0, 8)
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("RectangleShape2D_y4sag")

@@ -1,12 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfysbi31u81uc"]
+[gd_scene load_steps=8 format=3 uid="uid://bfysbi31u81uc"]
 
+[ext_resource type="Script" uid="uid://boipm8gshvrxx" path="res://level.gd" id="1_1ainy"]
 [ext_resource type="PackedScene" uid="uid://b2kp6fuk76cal" path="res://player/player_ship.tscn" id="1_u52ul"]
+[ext_resource type="Script" uid="uid://dwgm4dr0nca56" path="res://sandbox.gd" id="2_n6hdu"]
 [ext_resource type="Script" uid="uid://lepf3qcm8hko" path="res://camera.gd" id="2_vonw3"]
 [ext_resource type="Script" uid="uid://k4qcbxbqhlai" path="res://level/starfield.gd" id="3_oi3di"]
 [ext_resource type="PackedScene" uid="uid://6ioxjgp8cxk5" path="res://ui/debug/debug_component_window.tscn" id="4_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://dleovlvr46skc" path="res://enemies/ships/enemy_ship_test.tscn" id="4_f2txt"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_1ainy")
+
+[node name="Sandbox" type="Node" parent="."]
+script = ExtResource("2_n6hdu")
 
 [node name="Player Ship" parent="." instance=ExtResource("1_u52ul")]
 

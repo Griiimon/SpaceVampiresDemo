@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://dbqd18vmhywy6"
 [sub_resource type="Resource" id="Resource_j6obm"]
 script = ExtResource("2_v44f0")
 type = ExtResource("3_xwq2p")
-tier = 5
+tier = 1
 metadata/_custom_type_script = "uid://dbqd18vmhywy6"
 
 [sub_resource type="Resource" id="Resource_mpsxo"]

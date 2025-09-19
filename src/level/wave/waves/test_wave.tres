@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyWave" load_steps=4 format=3 uid="uid://xr2bocft5ncl"]
+
+[ext_resource type="Script" uid="uid://dafnwjrmpwp1s" path="res://level/wave/enemy_spawn_group.gd" id="1_1oak1"]
+[ext_resource type="Resource" uid="uid://4rq64qo33etb" path="res://level/wave/waves/test_spawn_group.tres" id="2_e74ff"]
+[ext_resource type="Script" uid="uid://bfxrsulvo14t1" path="res://level/wave/enemy_wave.gd" id="2_hpqhk"]
+
+[resource]
+script = ExtResource("2_hpqhk")
+spawn_groups = Array[ExtResource("1_1oak1")]([ExtResource("2_e74ff")])
+metadata/_custom_type_script = "uid://bfxrsulvo14t1"

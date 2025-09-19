@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemySpawnGroup" load_steps=7 format=3 uid="uid://4rq64qo33etb"]
+
+[ext_resource type="Script" uid="uid://dafnwjrmpwp1s" path="res://level/wave/enemy_spawn_group.gd" id="1_bkfbb"]
+[ext_resource type="Script" uid="uid://bwqmmnbau0o8f" path="res://enemies/enemy_type.gd" id="1_f4bhn"]
+[ext_resource type="PackedScene" uid="uid://dleovlvr46skc" path="res://enemies/ships/enemy_ship_test.tscn" id="2_swo61"]
+[ext_resource type="Script" uid="uid://d3fsixxhosxcy" path="res://level/wave/circular_enemy_spawn_pattern.gd" id="3_swo61"]
+
+[sub_resource type="Resource" id="Resource_mxa85"]
+script = ExtResource("1_f4bhn")
+ship_scene = ExtResource("2_swo61")
+metadata/_custom_type_script = "uid://bwqmmnbau0o8f"
+
+[sub_resource type="Resource" id="Resource_t5xcs"]
+script = ExtResource("3_swo61")
+radius = 400
+metadata/_custom_type_script = "uid://d3fsixxhosxcy"
+
+[resource]
+script = ExtResource("1_bkfbb")
+enemy_type = SubResource("Resource_mxa85")
+amount = 30
+pattern = SubResource("Resource_t5xcs")
+metadata/_custom_type_script = "uid://dafnwjrmpwp1s"

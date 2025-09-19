@@ -5,7 +5,7 @@ extends Resource
 @export var tier: int= 1
 
 var active: bool= false
-
+var last_energy_percentage: float
 
 
 func update_state(ship: Ship, delta: float):

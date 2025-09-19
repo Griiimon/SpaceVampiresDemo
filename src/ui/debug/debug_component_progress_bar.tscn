@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqly3cnwq4qjt"]
+
+[ext_resource type="Script" uid="uid://ynui2wkht53q" path="res://ui/debug/debug_component_progress_bar.gd" id="1_slq5t"]
+
+[sub_resource type="Gradient" id="Gradient_c5got"]
+offsets = PackedFloat32Array(0, 0.55414, 1)
+colors = PackedColorArray(0, 1, 0, 1, 0.807843, 0.811765, 0.00392157, 1, 1, 0.188235, 0.0156863, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t46a6"]
+gradient = SubResource("Gradient_c5got")
+width = 50
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h376k"]
+texture = SubResource("GradientTexture1D_t46a6")
+axis_stretch_horizontal = 1
+
+[node name="Debug Component Progress Bar" type="PanelContainer"]
+script = ExtResource("1_slq5t")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxTexture_h376k")
+max_value = 1.0
+show_percentage = false

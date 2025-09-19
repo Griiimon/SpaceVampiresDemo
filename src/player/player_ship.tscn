@@ -13,25 +13,25 @@
 [sub_resource type="Resource" id="Resource_ttmp0"]
 script = ExtResource("2_v44f0")
 type = ExtResource("3_j6obm")
-tier = 1
+tier = null
 metadata/_custom_type_script = "uid://dbqd18vmhywy6"
 
 [sub_resource type="Resource" id="Resource_j6obm"]
 script = ExtResource("2_v44f0")
 type = ExtResource("3_xwq2p")
-tier = 1
+tier = null
 metadata/_custom_type_script = "uid://dbqd18vmhywy6"
 
 [sub_resource type="Resource" id="Resource_mpsxo"]
 script = ExtResource("2_v44f0")
 type = ExtResource("4_j6obm")
-tier = 1
+tier = null
 metadata/_custom_type_script = "uid://dbqd18vmhywy6"
 
 [sub_resource type="Resource" id="Resource_sty7l"]
 script = ExtResource("2_v44f0")
 type = ExtResource("5_mpsxo")
-tier = 1
+tier = null
 metadata/_custom_type_script = "uid://dbqd18vmhywy6"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5xgho"]

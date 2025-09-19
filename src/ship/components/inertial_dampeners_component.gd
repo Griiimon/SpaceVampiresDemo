@@ -5,7 +5,7 @@ extends BaseShipComponent
 
 
 func update_state(ship: Ship, tier: int, delta: float)-> bool:
-	return ship.controller.thrust < 0
+	return ship.controller.brake > 0
 
 
 func on_activity_changed(ship: Ship, active: bool, tier: int):

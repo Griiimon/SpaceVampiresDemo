@@ -5,6 +5,7 @@ extends Node
 
 var thrust: float
 var rotate: float
+var brake: float
 
 
 func _ready() -> void:

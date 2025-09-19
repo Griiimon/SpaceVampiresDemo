@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://6ioxjgp8cxk5"]
+[gd_scene load_steps=4 format=3 uid="uid://6ioxjgp8cxk5"]
 
 [ext_resource type="Script" uid="uid://cs5l05a07pm3i" path="res://ui/debug/debug_component_window.gd" id="1_gko1j"]
 [ext_resource type="PackedScene" uid="uid://u1hu6jmqcdvf" path="res://ui/debug/debug_component_button.tscn" id="2_mi01y"]
+[ext_resource type="PackedScene" uid="uid://cqly3cnwq4qjt" path="res://ui/debug/debug_component_progress_bar.tscn" id="3_51sds"]
 
 [node name="Debug Component Window" type="PanelContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_gko1j")
 button_scene = ExtResource("2_mi01y")
+progress_bar_scene = ExtResource("3_51sds")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -16,5 +18,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Container" type="GridContainer" parent="MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+columns = 3

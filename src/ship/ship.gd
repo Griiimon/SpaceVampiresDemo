@@ -27,11 +27,13 @@ func _physics_process(delta: float) -> void:
 		if prev_state != component.active:
 			state_change_list.append(component)
 		consumed_energy+= component.get_energy_usage(self, delta)
-	
-	prints("Total energy", total_available_energy)
+
+	for component in components:
+		component.last_energy_percentage= component.get_energy_usage(self, delta) / total_available_energy
+
 	available_energy_ratio= clampf(total_available_energy / consumed_energy, 0.0, 1.0)
 	total_available_energy= 0
-	prints("Available energy", available_energy_ratio)
+		
 	
 	for component in state_change_list:
 		component.on_activity_changed(self, component.active, component.tier)

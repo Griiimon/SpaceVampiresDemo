@@ -44,13 +44,17 @@ func _physics_process(delta: float) -> void:
 
 
 func add_component(component_type: BaseShipComponent):
-	assert(false, "not implemented")
+	assert(not has_component(component_type))
+	var comp_inst:= ShipComponentInstance.new()
+	comp_inst.type= component_type
+	components.append(comp_inst)
 
 
 func upgrade_component(component_type: BaseShipComponent):
 	if not has_component(component_type):
 		add_component(component_type)
-	get_component(component_type).upgrade()
+	else:
+		get_component(component_type).upgrade()
 
 
 func add_energy(energy: float):
